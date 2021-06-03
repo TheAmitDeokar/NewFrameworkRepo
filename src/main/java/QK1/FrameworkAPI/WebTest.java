@@ -1,6 +1,7 @@
 package QK1.FrameworkAPI;
 
 import java.io.BufferedReader;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -27,7 +28,7 @@ public class WebTest
 	public void CreateObjectRepository(String ObjectRepositoryFileName)
 	{
 		
-		//String ObjectRepositoryFilePath="D:\\QualityKioskTraining\\TestCasesProject\\OrangeHRMTestCases\\ObjectRepositories\\"+ObjectRepositoryFileName+".txt";
+		
 		String ObjectRepositoryFilePath=JavaUtilities.EnvVars.get("ObjectRepositoriesLocation")+"\\"+ObjectRepositoryFileName+".txt";
 		
 		try 
@@ -89,14 +90,10 @@ public class WebTest
 		switch(Browser)
 		{
 			case "CHROME":
-				////System.setProperty("webdriver.chrome.driver", "D:\\QualityKioskTraining\\Drivers\\chromedriver.exe");
-				///System.setProperty("webdriver.chrome.driver", JavaUtilities.EnvVars.get(0));
 				System.setProperty("webdriver.chrome.driver", JavaUtilities.EnvVars.get("ChromeDriverPath"));
 				Driver=new ChromeDriver();
 				break;
 			case "FIREFOX":
-				//System.setProperty("webdriver.gecko.driver", "D:\\QualityKioskTraining\\Drivers\\geckodriver.exe");
-				//System.setProperty("webdriver.chrome.driver", JavaUtilities.EnvVars.get(2));
 				System.setProperty("webdriver.chrome.driver", JavaUtilities.EnvVars.get("FirefoxDriverPath"));
 				Driver=new FirefoxDriver();
 				break;
@@ -109,8 +106,6 @@ public class WebTest
 	public void OpenURL()
 	{
 		
-		//Driver.get("https://opensource-demo.orangehrmlive.com");
-		////Driver.get(JavaUtilities.EnvVars.get(1));
 		Driver.get(JavaUtilities.EnvVars.get("ApplicationURL"));
 	}
 	

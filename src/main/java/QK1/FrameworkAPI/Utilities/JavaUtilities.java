@@ -18,7 +18,6 @@ public static HashMap<String,String>EnvVars=new HashMap<String,String>();
 	
 	public static void ReadEnvVars()
 	{
-		//String PathOfEnvFile="D:\\QualityKioskTraining\\TestCasesProject\\OrangeHRMTestCases\\EnvVars.txt";
 		String PathOfEnvFile=System.getenv("SeleniumConfigFile");
 		
 		try 
@@ -31,7 +30,6 @@ public static HashMap<String,String>EnvVars=new HashMap<String,String>();
 				String []Pieces=Line.split(",");
 				String VariableName=Pieces[0];
 				String VariableValue=Pieces[1];
-				///EnvVars.add(VariableValue);
 				EnvVars.put(VariableName, VariableValue);
 				Line=BR.readLine();
 			}	
@@ -105,7 +103,6 @@ public static HashMap<String,String>EnvVars=new HashMap<String,String>();
 
 	public static String getCellData(int Row,int Col)
 	{
-		//Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
 		XSSFCell Cell =ExcelWSheet.getRow(Row).getCell(Col);
 		String CellData=Cell.getStringCellValue();
 		return CellData;
